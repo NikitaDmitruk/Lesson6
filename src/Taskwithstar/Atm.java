@@ -23,7 +23,7 @@ public class Atm {
         System.out.println("Количество купюр номиналом 20 = " + twentyBanknote[1] + " ; номиналом 50 = " + fiftyBanknote[1] + " ; номиналом 100 = " + hundredBanknote[1]);
     }
 
-    public boolean Withdrawn(int amount) { //В общем тут написана попытка реализовать алгоритм динамического программирования, но не совсем получилось
+    public boolean withdrawn(int amount) { //В общем тут написана попытка реализовать алгоритм динамического программирования, но не совсем получилось
         int n = fiftyBanknote[1] + twentyBanknote[1] + hundredBanknote[1];
         int[] arrForBanknotes = new int[n]; // Массив для банкнот
         int[][] sums = new int[999999][2]; //Массив для возможных вариантов сумм и последних купюр, с помощью которой эта сумма получилась. Тут косяк, т.к. размера может не хватить
