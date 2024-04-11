@@ -81,4 +81,51 @@ public class Atm {
         }
         return false; //Возвращаем если мы не нашли необходимого варианты суммы
     }
+
+    public boolean withdrawnAll(int amount) {
+        int sum;
+        int sumHundred = 0;
+        for (int i = 0; i <= hundredBanknote[1]; i++) {
+            int hundred;
+            if (i == 0) {
+                hundred = 0;
+            } else {
+                hundred = 100;
+            }
+            sumHundred = sumHundred + hundred;
+            for (int j = 0; j <= fiftyBanknote[1]; j++) {
+                int fifty;
+                if (j == 0) {
+                    fifty = 0;
+                } else {
+                    fifty = 50;
+                }
+                sum = sumHundred + fifty;
+                for (int k = 0; k <= twentyBanknote[1]; k++) {
+                    int twenty;
+                    if (k == 0) {
+                        twenty = 0;
+                    } else {
+                        twenty = 20;
+                    }
+                    sum = sum + twenty;
+                    if (sum == amount) {
+                        System.out.println("Заберите деньги такими купюрами:");
+                        for (int l = 1; l <= i; l++) {
+                            System.out.println(hundredBanknote[0] + " ");
+                        }
+                        for (int m = 1; m <= j; m++) {
+                            System.out.println(fiftyBanknote[0] + " ");
+                        }
+                        for (int n = 1; n <= k; n++) {
+                            System.out.println(twentyBanknote[0] + " ");
+                        }
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
+
